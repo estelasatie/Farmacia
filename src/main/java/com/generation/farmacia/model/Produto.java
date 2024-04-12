@@ -27,10 +27,13 @@ public class Produto {
 	@Size(min = 5, max = 100, message = "Tamanho minimo: 5, máximo: 100")
 	private String titulo;
 
-	@NotBlank(message = "O atributo Título é obrigatório")
+	@NotBlank(message = "O atributo descricao é obrigatório")
 	@Size(min = 10, max = 1000, message = "Tamanho minimo: 10, máximo: 1000")
-	private String texto;
+	private String descricao;
 
+	@NotBlank(message = "O atributo valor é obrigatório!")
+	private double valor;
+	
 	@UpdateTimestamp
 	private LocalDateTime data;
 
@@ -54,12 +57,12 @@ public class Produto {
 		this.titulo = titulo;
 	}
 
-	public String getTexto() {
-		return texto;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public LocalDateTime getData() {
@@ -76,6 +79,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
 
 }
